@@ -14,12 +14,12 @@ def question1(s,t):
     # Convert strings to lower case
     s = s.lower()
     t = t.lower()
-    
+
     l = len(t)
     for i in range(len(s)):
         if sorted(s[i:(i+l)]) == sorted(t):
             return True
-    
+
     return False
 
 print "\nQuestion1 Test Cases:"
@@ -35,12 +35,3 @@ print " question1(\"\", \"ad\"): %s" % (question1("", "ad"))
 print " question1(\"ad\", \"udacity\"): %s" % (question1("ad", "udacity"))
 # Should return Error
 print " question1(\"udacity\", 1): %s" % (question1("udacity", 1))
-
-# Complexcity  O(n) where n = lengh of s
-
-
-
-
-
-
-

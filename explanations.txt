@@ -1,0 +1,26 @@
+Explanation for Interview Practice questions.
+
+Question 1:
+Given two strings s and t, determine whether some anagram of t is a substring of s. For example: if s = "udacity" and t = "ad", then the function returns True. Your function definition should look like: question1(s, t) and return a boolean True or False.
+
+Clear the question:
+- Will 's' be longer than 't'?
+- Should we consider case sensitivity?
+
+Confirm the input and output:
+- Input: 2 strings. First is bigger and second is smaller.
+- Output: Boolean
+
+Discuss test cases:
+- If any one of the parameters is not string then we can return Error.
+- If length of the 't' is zero we can return True.
+- If 's' is smaller than 't', we can return False.
+
+Solution explanation:
+- First of all we have to convert both the strings to similar case as we computing the result based on case insensitive characters.
+- We have to scan 's' character by character. Each time we can grab the substring of 's'(starting at 'i'th position till the length of 't').
+- We can compare sorted output of the substring and 't'. If it is true means we have the anagram of 't' in 's'.
+
+Complexity:
+- We are scanning 's' character by character so worst case runtime complexity is O(n) where n is the number of characters in 's'.
+- We don't need other data structure to compute the result so the space complexity is O(1).
