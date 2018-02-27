@@ -72,5 +72,81 @@ def run_test_q2():
     # Should return Error
     print " question2(121): %s" % (question2(121))
 
+def question3(G):
+
+    # Use Kruskal's algorithm(Greedy algorithm) to find the minimum spanning tree
+    # Find out unique edges and sort them by weight.
+    # Take edges one by one and form a tree unless all vertices convered
+    # Skip the edge if it forming a cycle
+
+    # Check if G is a dictionary
+    if type(G) != dict:
+        return "Error: G is not a dictionary"
+
+    # Check if G has more than 2 nodes
+    if len(G) < 2:
+        return "Error: G has not enough vertices to form an edge"
+
+    # Retrive a set of vertices
+    vertices = G.keys()
+
+    # Retrieve the unique set of edges
+    edges = set()
+    for vertice in vertices:
+        for edge in G[vertice]:
+            # Set has unique value so if edge is already present
+            # then it will not make duplicate copy
+            if vertice > edge[0]:
+                edges.add((edge[1], edge[0], vertice))
+            elif vertice < edge[0]:
+                edges.add((edge[1], vertice, edge[0]))
+
+    # Sort the edges by weight
+    edges = sorted(list(edges))
+
+    # Add edge to minimum spanning tree if it is not forming a cycle
+    # Loop throght edges till all the vertices are covered
+    mst = []
+    # Convert the vertices in the for of set
+    vertices = [set(i) for i in vertices]
+    for edge in edges:
+        # Retrive indexes of both vertices
+        for i in xrange(len(vertices)):
+            if edge[1] in vertices[i]:
+                v1 = i
+            if edge[2] in vertices[i]:
+                v2 = i
+
+        # Union both the vertices set and store the result in smaller vertices
+        # Pop the larger vertices set
+        # Store the edge in mst
+        if v1 < v2:
+            vertices[v1] = set.union(vertices[v1], vertices[v2])
+            vertices.pop(v2)
+            mst.append(edge)
+        if v1 > v2:
+            vertices[v1] = set.union(vertices[v1], vertices[v2])
+            vertices.pop(v1)
+            mst.append(edge)
+
+        # If all vertices are covered the stop the operation
+        if len(vertices) == 1:
+            break
+
+    # Generate output MST Graph (Adjacency list structured)
+    mst_graph = {}
+    for edge in mst:
+        if edge[1] in mst_graph:
+            mst_graph[edge[1]].append((edge[2], edge[0]))
+        else:
+            mst_graph[edge[1]] = [(edge[2], edge[0])]
+
+        if edge[2] in mst_graph:
+            mst_graph[edge[2]].append((edge[1], edge[0]))
+        else:
+            mst_graph[edge[2]] = [(edge[1], edge[0])]
+
+    return mst_graph
+
 run_test_q1()
 run_test_q2()
