@@ -21,17 +21,21 @@ def question1(s,t):
             return True
 
     return False
+    
+def run_test_q1():
+    print "\nQuestion1 Test Cases:"
+    # Should return True
+    print " question1(\"udacity\", \"ad\"): %s" % (question1("udacity", "ad"))
+    # Should return Flase
+    print " question1(\"udacity\", \"udy\"): %s" % (question1("udacity", "udy"))
+    # Should return True
+    print " question1(\"udacity\", \"\"): %s" % (question1("udacity", ""))
+    # Should return False
+    print " question1(\"\", \"ad\"): %s" % (question1("", "ad"))
+    # Should return False
+    print " question1(\"ad\", \"udacity\"): %s" % (question1("ad", "udacity"))
+    # Should return Error
+    print " question1(\"udacity\", 1): %s" % (question1("udacity", 1))
 
-print "\nQuestion1 Test Cases:"
-# Should return True
-print " question1(\"udacity\", \"ad\"): %s" % (question1("udacity", "ad"))
-# Should return Flase
-print " question1(\"udacity\", \"udy\"): %s" % (question1("udacity", "udy"))
-# Should return True
-print " question1(\"udacity\", \"\"): %s" % (question1("udacity", ""))
-# Should return False
-print " question1(\"\", \"ad\"): %s" % (question1("", "ad"))
-# Should return False
-print " question1(\"ad\", \"udacity\"): %s" % (question1("ad", "udacity"))
-# Should return Error
-print " question1(\"udacity\", 1): %s" % (question1("udacity", 1))
+
+run_test_q1()
