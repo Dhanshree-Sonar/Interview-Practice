@@ -96,14 +96,14 @@ def question3(G):
 
     # Retrieve the unique set of edges
     edges = set()
-    for vertice in vertices:
-        for edge in G[vertice]:
+    for vertex in vertices:
+        for edge in G[vertex]:
             # Set has unique value so if edge is already present
             # then it will not make duplicate copy
-            if vertice > edge[0]:
-                edges.add((edge[1], edge[0], vertice))
-            elif vertice < edge[0]:
-                edges.add((edge[1], vertice, edge[0]))
+            if vertex > edge[0]:
+                edges.add((edge[1], edge[0], vertex))
+            elif vertex < edge[0]:
+                edges.add((edge[1], vertex, edge[0]))
 
     # Sort the edges by weight
     edges = sorted(list(edges))
