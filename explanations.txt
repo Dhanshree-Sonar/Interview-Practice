@@ -8,7 +8,7 @@ Clear the question:
 - Should we consider case sensitivity?
 
 Confirm the input and output:
-- Input: 2 strings. First is bigger and second is smaller.
+- Input: 2 strings. First is 's' and second is 't'.
 - Output: Boolean
 
 Discuss test cases:
@@ -24,3 +24,34 @@ Solution explanation:
 Complexity:
 - We are scanning 's' character by character so worst case runtime complexity is O(n) where n is the number of characters in 's'.
 - We don't need other data structure to compute the result so the space complexity is O(1).
+
+
+Question 2:
+Given a string a, find the longest palindromic substring contained in a. Your function definition should look like question2(a), and return a string.
+
+Clear the question:
+- Is there a limit on string length?
+- If we have more than one result, which one we should consider?
+- Can we assume empty string or single character string as a palindromic string?
+
+Confirm the input and output:
+- Input: A string
+- Output: Longest palindromic string
+
+Discuss test cases:
+- We should compute output case insensitively. "Racecar" can be considered as an palindromic string.
+- If input is not a string then we can return error.
+- If length is 0 or 1 then we can return the string as it is.
+- If string contains no palindromic substring, which is longer than 1 character, then we can return first character of the string.
+- If two palindromic substrings are of same size we can consider the first one as a longest palindromic substring.
+
+Solution explanation:
+- Convert a string to lower case to compute output case insensitively
+- Start at the first character then from that character add one character at a time to form the substring and check if a substring is a palindromic.
+- Compare the substring and its reversed string to check if the substring is palindromic or not
+- If the string is palindromic then check if it is longer than the previous one. If it is then consider the current substring as a longest palindromic string.
+- Move to the next character of the string and start checking for palindromic substring
+
+Complexity:
+- We are scanning 'a' character by character and each time we are checking m substrings where m is the length of the characters from 'i'th position. So the runtime complexity is approximately O(n^2).
+- We need store a string in different variable which will less than or equal to the original string, so the space complexity is O(2) which can be approximated to O(1).
