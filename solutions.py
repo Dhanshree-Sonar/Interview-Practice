@@ -83,9 +83,13 @@ def question3(G):
     if type(G) != dict:
         return "Error: G is not a dictionary"
 
-    # Check if G has more than 2 nodes
+    # Check if G empty
+    if len(G) == 0:
+        return {}
+
+    # Check if G has less than 2 vertices
     if len(G) < 2:
-        return "Error: G has not enough vertices to form an edge"
+        return "Error: G has no edge to form a tree"
 
     # Retrive a set of vertices
     vertices = G.keys()
