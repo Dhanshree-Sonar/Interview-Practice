@@ -173,7 +173,7 @@ def run_test_q3():
              'H': [('B', 5), ('I', 15)],
              'I': [('H', 15)]}
 
-    H = {'A': [('B', 7), ('D', 5)]}
+    H = {'A':[]}
 
     print "\nQuestion3 Test Cases:"
     # Should return G_MST
@@ -182,7 +182,7 @@ def run_test_q3():
     print " question3(\"graph\"): %s" % (question3("graph"))
     # Should return error
     print " question3(H): %s" % (question3(H))
-    # Should return error
+    # Should return {}
     print " question3({}): %s" % (question3({}))
 
 run_test_q1()
