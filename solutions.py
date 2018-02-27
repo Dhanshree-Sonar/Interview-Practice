@@ -57,4 +57,20 @@ def question2(a):
 
     return longest
 
+def run_test_q2():
+    print "\nQuestion2 Test Cases:"
+    # Should return racecar
+    print " question2(\"asRacecarde\"): %s" % (question2("asRacecarde"))
+    # Should return dddd
+    print " question2(\"asaddddghj\"): %s" % (question2("asaddddghj"))
+    # Should return able was i ere i saw elba
+    print " question2(\"Able was I ere I saw Elba\"): %s" % (question2("Able was I ere I saw Elba"))
+    # Should return p
+    print " question2(\"p\"): %s" % (question2("p"))
+    # Should return ''
+    print " question2(\"\"): %s" % (question2(""))
+    # Should return Error
+    print " question2(121): %s" % (question2(121))
+
 run_test_q1()
+run_test_q2()
