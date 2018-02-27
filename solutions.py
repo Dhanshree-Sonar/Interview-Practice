@@ -148,5 +148,39 @@ def question3(G):
 
     return mst_graph
 
+def run_test_q3():
+    G = {'A': [('B', 15), ('C', 25)],
+         'B': [('A', 15), ('E', 10), ('H', 5), ('I', 25)],
+         'C': [('A', 25), ('D', 10), ('E', 20)],
+         'D': [('C', 10)],
+         'E': [('B', 10), ('C', 20), ('F', 10), ('G', 5)],
+         'F': [('E', 10)],
+         'G': [('E', 5)],
+         'H': [('B', 5), ('I', 15)],
+         'I': [('B', 25), ('H', 15)]}
+
+    G_MST = {'A': [('B', 15)],
+             'B': [('H', 5), ('E', 10), ('A', 15)],
+             'C': [('D', 10), ('E', 20)],
+             'D': [('C', 10)],
+             'E': [('G', 5), ('B', 10), ('F', 10), ('C', 20)],
+             'F': [('E', 10)],
+             'G': [('E', 5)],
+             'H': [('B', 5), ('I', 15)],
+             'I': [('H', 15)]}
+
+    H = {'A': [('B', 7), ('D', 5)]}
+
+    print "\nQuestion3 Test Cases:"
+    # Should return G_MST
+    print " question3(G): %s" % (question3(G))
+    # Should return error
+    print " question3(\"graph\"): %s" % (question3("graph"))
+    # Should return error
+    print " question3(H): %s" % (question3(H))
+    # Should return error
+    print " question3({}): %s" % (question3({}))
+
 run_test_q1()
 run_test_q2()
+run_test_q3()
