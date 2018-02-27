@@ -55,3 +55,40 @@ Solution explanation:
 Complexity:
 - We are scanning 'a' character by character and each time we are checking m substrings where m is the length of the characters from 'i'th position. So the runtime complexity is approximately O(n^2).
 - We need store a string in different variable which will less than or equal to the original string, so the space complexity is O(2) which can be approximated to O(1).
+
+
+Question 3:
+Given an undirected graph G, find the minimum spanning tree within G. A minimum spanning tree connects all vertices in a graph with the smallest possible total weight of edges. Your function should take in and return an adjacency list structured like this:
+
+{'A': [('B', 2)],
+ 'B': [('A', 2), ('C', 5)],
+ 'C': [('B', 5)]}
+Vertices are represented as unique strings. The function definition should be question3(G).
+
+Clear the question:
+- What if the graph is empty?
+- What if the graph has a single node?
+
+Confirm the input and output:
+- Input: A Dictionary (Vertex as a key and Edges as values)
+- Output: A Dictionary (Vertex as a key and Edges as values)
+
+Discuss test cases:
+- If the graph is an empty dictionary then we will return empty dictionary.
+- If the graph has a single vertex then we will return Error.
+- If the graph is not in a dictionary format we will return Error.
+
+Solution explanation:
+- Use Kruskal's algorithm (Greedy algorithm) to find the minimum spanning tree
+- Find out unique edges and sort them by weight
+- Take edges one by one and form a tree till all vertices are covered. Skip the edge if it is forming a cycle.
+- One way to check if edge is forming a cycle in the graph is by keep track of each vertex in a list of sets. If the new edge will connect two vertices within the same set, we will not include it. Else, we union of the sets and pop other set.
+
+Complexity:
+
+- It will take O(E) time to create list of unique edges.
+- We are using python sort function to sort the edges so the time complexity for that will be O(Elog(E)).
+- We need to loop through each edges, find indexes and merge the vertices set to add edges to MST. This will take worst case O(E*V) time.
+- It will take O(E) time to form the output.
+- So, overall algorithm will take O(E + Elog(E) + E*V + E) which can be approximated to O(E*V).
+- We need vertices set (V) and edges set (E) so the space complexity is O(E+V), also we need a dictionary to store output graph (G). So the space complexity is O(V+E+G).
