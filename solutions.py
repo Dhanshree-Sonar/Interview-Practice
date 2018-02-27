@@ -21,7 +21,7 @@ def question1(s,t):
             return True
 
     return False
-    
+
 def run_test_q1():
     print "\nQuestion1 Test Cases:"
     # Should return True
@@ -37,5 +37,24 @@ def run_test_q1():
     # Should return Error
     print " question1(\"udacity\", 1): %s" % (question1("udacity", 1))
 
+def question2(a):
+    # Check whether arguement is of string data-type
+    if type(a) != str:
+        return "Error: Argument is not a string"
+
+    # If string is empty or single character then return string as it is
+    if len(a) < 2:
+        return a
+
+    longest = ""
+    a = a.lower()
+    for i in range(len(a)):
+        # Traverse the each substring after the i position
+        for j in range(i+1, len(a)+1):
+            # Check if substring is palindrom and if it is logner than the current one
+            if a[i:j] == a[i:j][::-1] and len(longest) < len(a[i:j]):
+                longest = a[i:j]
+
+    return longest
 
 run_test_q1()
