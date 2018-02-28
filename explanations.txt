@@ -129,3 +129,36 @@ Solution explanation:
 Complexity:
 - Program needs O(n) to find the parents of a node. Time complexity would be O(2n) for two nodes.
 - We are just storing the ancestors list of node1 so the space complexity would be O(1 + H) where H is the height of the tree. It can be approximated to O(1).
+
+
+Question 5:
+Find the element in a singly linked list that's m elements from the end. For example, if a linked list has 5 elements, the 3rd element from the end is the 3rd element. The function definition should look like question5(ll, m), where ll is the first node of a linked list and m is the "mth number from the end". You should copy/paste the Node class below to use as a representation of a node in the linked list. Return the value of the node at that position.
+
+class Node(object):
+  def __init__(self, data):
+    self.data = data
+    self.next = None
+
+Clear the question:
+- Can the list contain any type of objects?
+- Is m always going to be less than or equal to the number of linked nodes?
+
+Confirm the input and output:
+- Input: Linked list (ll) and position (m)
+- Output: 'm'th element from the end of the 'll'
+
+Discuss test cases:
+- If 'm' is non-integer then return error
+- If 'm' is greater than length of 'll' then we can return None.
+- If 'm' is smaller than or equal to 0 then return None.
+- If 'm' is equal to length of the 'll' then we can return head element data
+
+Solution explanation:
+- Calculate the number of the nodes in linked list
+- Subtract 'm' from the number to get the position to fetch the element
+- Traverse the linked list till the position and return the data at that location
+
+Complexity:
+- To find the number of the nodes we have to traverse the linked list which take O(n) time complexity.
+- To find 'm' position we have to again traverse the linked list which takes O(n) in worst cast. Total time complexity would be O(2n) which can be approximated to O(n)
+- We don't require any other data structure to store the result so the space complexity is O(1).
