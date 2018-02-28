@@ -314,7 +314,28 @@ class LinkedList(object):
         return None
 
 
+def run_test_q5():
+    ll = LinkedList(20)
+    ll.append(12)
+    ll.append(45)
+    ll.append(37)
+    ll.append(24)
+    ll.append(11)
+
+    print "\nQuestion5 Test Cases:"
+    # Should return 12
+    print " question5(ll, 2): %s" % (question5(ll, 2))
+    # Should return 37
+    print " question5(ll, 4): %s" % (question5(ll, 4))
+    # Should return None
+    print " question5(ll, 0): %s" % (question5(ll, 0))
+    # Should return None
+    print " question5(ll, 7): %s" % (question5(ll, 7))
+    # Should return Error
+    print " question5(ll, 3.5): %s" % (question5(ll, 3.5))
+
 run_test_q1()
 run_test_q2()
 run_test_q3()
 run_test_q4()
+run_test_q5()
