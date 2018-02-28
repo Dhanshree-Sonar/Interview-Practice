@@ -13,13 +13,13 @@ Confirm the input and output:
 
 Discuss test cases:
 - If any one of the parameters is not string then we can return Error.
-- If length of the 't' is zero we can return True.
+- If length of the 't' is zero then we can return True.
 - If 's' is smaller than 't', we can return False.
 
 Solution explanation:
-- First of all we have to convert both the strings to similar case as we computing the result based on case insensitive characters.
-- We have to scan 's' character by character. Each time we can grab the substring of 's'(starting at 'i'th position till the length of 't').
-- We can compare sorted output of the substring and 't'. If it is true means we have the anagram of 't' in 's'.
+- First of all we have to convert both the strings to similar case as we are computing the result based on case insensitive characters.
+- We have to scan 's' character by character. Each time, we have to retrieve the substring of 's'(starting at 'i'th position till the length of 't').
+- We can compare sorted output of the substring and 't'. If it is true which means we have the anagram of 't' in 's'.
 
 Complexity:
 - We are scanning 's' character by character so worst case runtime complexity is O(n) where n is the number of characters in 's'.
@@ -46,15 +46,15 @@ Discuss test cases:
 - If two palindromic substrings are of same size we can consider the first one as a longest palindromic substring.
 
 Solution explanation:
-- Convert a string to lower case to compute output case insensitively
+- Convert a string to lower case to compute the output case insensitively
 - Start at the first character then from that character add one character at a time to form the substring and check if a substring is a palindromic.
 - Compare the substring and its reversed string to check if the substring is palindromic or not
-- If the string is palindromic then check if it is longer than the previous one. If it is then consider the current substring as a longest palindromic string.
+- If the string is palindromic then check if it is longer than the previous one. If it is longer, then consider the current substring as a longest palindromic string.
 - Move to the next character of the string and start checking for palindromic substring
 
 Complexity:
 - We are scanning 'a' character by character and each time we are checking m substrings where m is the length of the characters from 'i'th position. So the runtime complexity is approximately O(n^2).
-- We need store a string in different variable which will less than or equal to the original string, so the space complexity is O(2) which can be approximated to O(1).
+- We need to store a string in different variable which will be less than or equal to the original string, so the space complexity is O(2) which can be approximated to O(1).
 
 
 Question 3:
