@@ -208,32 +208,48 @@ def question4(T, r, n1, n2):
     if n1 >= len(T) or n2 >= len(T):
         return "Error: Nodes can not be greater than largest tree element"
 
-    # Define a list for all ancestors of n1
-    n1_parents = []
-    # Find all the parents of n1 staring from most recent parent till root
-    while n1 != r:
-        n1 = parent(T, n1)
-        n1_parents.append(n1)
+    # Initialize the BST
+    root = BSTNode(r)
+    initialize(T, root)
 
-    # If no parents found retunr -1
-    if len(n1_parents) == 0:
-        return -1
-    # Find all the parents of n2 staring from most recent parent till root
-    while n2 != r:
-        n2 = parent(T, n2)
-        # if the recent parent is in the n1 parents list then return that node
-        if n2 in n1_parents:
-            return n2
+    # Use lca to find the least common ancestor
+    return lca(root, n1, n2)
 
-    return -1
 
-def parent(T, n):
+class BSTNode:
+    # Create a new BST node object
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+
+def initialize(T, n):
     for i in range(len(T)):
-        # Check which row(node) has 'n' as a child node
-        if T[i][n] == 1:
-            return i
+        # Check if child is greater than the node
+        if (T[n.value][i] == 1 and i > n.value):
+            # Make the child as right child
+            n.right = BSTNode(i)
+            initialize(T, n.right)
 
-    return -1
+        # Check if child is smaller than the node
+        if (T[n.value][i] == 1 and i < n.value):
+            # Make the child as left child
+            n.left = BSTNode(i)
+            initialize(T, n.left)
+
+def lca(root, n1, n2):
+    # Check if n1 and n2 are smaller than root
+    # if true means lies the LCA in left
+    if(root.value > n1 and root.value > n2):
+        return lca(root.left, n1, n2)
+
+    # Check if n1 and n2 are greater than root
+    # if true means lies the LCA in right
+    if(root.value < n1 and root.value < n2):
+        return lca(root.right, n1, n2)
+
+    return root.value
 
 def run_test_q4():
     T = [[0, 1, 0, 0, 0],
@@ -245,6 +261,8 @@ def run_test_q4():
     print "\nQuestion4 Test Cases:"
     # Should return 3
     print " question4(T,3,1,4): %s" % (question4(T,3,1,4))
+    # Should return 0
+    print " question4(T,3,0,1): %s" % (question4(T,3,0,1))
     # Should return error
     print " question4(1,3,1,4): %s" % (question4(1,3,1,4))
     # Should return error
