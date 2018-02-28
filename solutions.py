@@ -235,6 +235,28 @@ def parent(T, n):
 
     return -1
 
+def run_test_q4():
+    T = [[0, 1, 0, 0, 0],
+         [0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0],
+         [1, 0, 0, 0, 1],
+         [0, 0, 0, 0, 0]]
+
+    print "\nQuestion4 Test Cases:"
+    # Should return 3
+    print " question4(T,3,1,4): %s" % (question4(T,3,1,4))
+    # Should return error
+    print " question4(1,3,1,4): %s" % (question4(1,3,1,4))
+    # Should return error
+    print " question4([],3,1,4): %s" % (question4([],3,1,4))
+    # Should return error
+    print " question4(T,3,-1,4): %s" % (question4(T,3,-1,4))
+    # Should return error
+    print " question4(T,3,1,4.2): %s" % (question4(T,3,1,4.2))
+    # Should return error
+    print " question4(T,3,1,5): %s" % (question4(T,3,1,5))
+
 run_test_q1()
 run_test_q2()
 run_test_q3()
+run_test_q4()
