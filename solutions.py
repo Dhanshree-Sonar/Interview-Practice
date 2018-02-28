@@ -185,6 +185,56 @@ def run_test_q3():
     # Should return {}
     print " question3({}): %s" % (question3({}))
 
+def question4(T, r, n1, n2):
+    # Check if T is not a set
+    if type(T) != list:
+       return "Error: T is not a set"
+    # Check if T is empty
+    if len(T) == 0:
+        return "Error: T is empty"
+    # Check if r, n1, and n2 are non-negative
+    if r < 0 or n1 < 0 or n2 <0:
+        return "Error: Node(s) can not be less than 0"
+    # Check if r, n1 and n2 are non-integer
+    if type(r) != int or type(n1) != int or type(n2) != int:
+        return "Error: Node(s) can not be non-integer"
+    # Check if n1 and n2 are equal
+    if n1 == n2:
+        return "Error: n1 and n2 should not be equal"
+    # Check if n1 or n2 are same sa root
+    if n1 == r or n2 == r:
+        return "Error: Node(s) value can not be same as root"
+    # Check if n1 or n2 are greater than largest tree element
+    if n1 >= len(T) or n2 >= len(T):
+        return "Error: Nodes can not be greater than largest tree element"
+
+    # Define a list for all ancestors of n1
+    n1_parents = []
+    # Find all the parents of n1 staring from most recent parent till root
+    while n1 != r:
+        n1 = parent(T, n1)
+        n1_parents.append(n1)
+
+    # If no parents found retunr -1
+    if len(n1_parents) == 0:
+        return -1
+    # Find all the parents of n2 staring from most recent parent till root
+    while n2 != r:
+        n2 = parent(T, n2)
+        # if the recent parent is in the n1 parents list then return that node
+        if n2 in n1_parents:
+            return n2
+
+    return -1
+
+def parent(T, n):
+    for i in range(len(T)):
+        # Check which row(node) has 'n' as a child node
+        if T[i][n] == 1:
+            return i
+
+    return -1
+
 run_test_q1()
 run_test_q2()
 run_test_q3()
