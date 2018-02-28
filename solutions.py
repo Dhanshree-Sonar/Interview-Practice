@@ -256,6 +256,64 @@ def run_test_q4():
     # Should return error
     print " question4(T,3,1,5): %s" % (question4(T,3,1,5))
 
+def question5(ll, m):
+    # Check if m is an integer
+    if type(m) != int:
+        return "Error: 'm' is not an integer"
+
+    # Check if m is greater than 0
+    if m <= 0:
+        return None
+
+    # Check if position to fetch the element is equal to linked list length
+    l = ll.length()
+    if m == l:
+        return ll.head.data
+
+    position = l - m
+    # Check if m is greater than the length of ll
+    if position < 1:
+        return None
+
+    return ll.get_element(position)
+
+
+class Node(object):
+  def __init__(self, data):
+    self.data = data
+    self.next = None
+
+
+class LinkedList(object):
+    def __init__(self, new_element):
+        self.head = Node(new_element)
+
+    def append(self, new_element):
+        node = Node(new_element)
+        node.next = self.head
+        self.head = node
+
+    def length(self):
+        length = 1
+        current = self.head
+        while current.next != None:
+            length += 1
+            current = current.next
+
+        return length
+
+    def get_element(self, position):
+        counter = 0
+        current = self.head
+        while counter <= position and current:
+            if counter == position:
+                return current.data
+            counter += 1
+            current = current.next
+
+        return None
+
+
 run_test_q1()
 run_test_q2()
 run_test_q3()
