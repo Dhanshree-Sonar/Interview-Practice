@@ -162,3 +162,10 @@ Complexity:
 - To find the number of the nodes we have to traverse the linked list which take O(n) time complexity.
 - To find 'm' position we have to again traverse the linked list which takes O(n) in worst cast. Total time complexity would be O(2n) which can be approximated to O(n)
 - We don't require any other data structure to store the result so the space complexity is O(1).
+
+
+References:
+https://programmingpraxis.com/2010/10/15/find-the-longest-palindrome-in-a-string/
+https://www.geeksforgeeks.org/greedy-algorithms-set-2-kruskals-minimum-spanning-tree-mst/
+https://github.com/GeneDer/Technical-Interview
+https://github.com/tonybastin/P7---Python_Project_Technical_Interview_Practise
