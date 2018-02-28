@@ -261,7 +261,7 @@ def question5(ll, m):
     if type(m) != int:
         return "Error: 'm' is not an integer"
 
-    # Check if m is greater than 0
+    # Check if m is smaller than or equal to 0
     if m <= 0:
         return None
 
