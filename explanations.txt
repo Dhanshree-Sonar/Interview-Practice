@@ -23,7 +23,8 @@ Solution explanation:
 
 Complexity:
 - We are scanning 's' character by character so worst case runtime complexity is O(n) where n is the number of characters in 's'.
-- We don't need other data structure to compute the result so the space complexity is O(1).
+- We are sorting string characters in each iteration. Sorting has time complexity O(nlog(n)). So the overall time complexity is O(n^2log(n)).
+- The sorted function returns a new array with the sorted values, so your space is actually O(t).
 
 
 Question 2:
