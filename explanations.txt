@@ -113,8 +113,8 @@ Clear the question:
 - No values can be repeated twice for nodes?
 
 Confirm the input and output:
-- Input: Tree represented as a matrix, root, node1 and node2
-- Output: Node (Which is the least common ancestor between node1 and node2)
+- Input: Tree represented as a matrix (T), root (r), node1 (n1) and node2 (n2)
+- Output: Node (Which is the least common ancestor between node1 and node2) value
 
 Discuss test cases:
 - If T is not a list or an empty list, we can return Error.
@@ -124,13 +124,15 @@ Discuss test cases:
 - If any node is greater than equal to T length which means it is not from the tree then we can return error.
 
 Solution explanation:
-- Find the ancestors of the node1 staring from most recent parent till root and store it in the list
-- Find the ancestors of the node2 staring from most recent parent till root. Each time check if the node2 ancestor is in the node1 parents list, if it's in the list return the node or continue the search.
+- Create a Binary Search Tree using a private inner class BSTNode (Which has value, left child and right child).
+- Using the definition of a BST, we can consider that if n1 and n2 both are smaller than r then LCA is in left side of the tree.
+- If n1 and n2 both are greater than r then LCA is in right side of the tree. Otherwise, root is the LCA.
+- Use recursion to keeps iterating through nodes until the common ancestor is the root.
 
 Complexity:
-- Program needs O(n) to find the parents of a node. Time complexity would be O(2n) for two nodes.
-- We are just storing the ancestors list of node1 so the space complexity would be O(1 + H) where H is the height of the tree. It can be approximated to O(1).
-
+- Program needs O(n) to Create a Binary Search Tree using a private inner class BSTNode.
+- To find LCA we are scanning through number of node so in the worst case situation time complexity will be O(n). Overall time complexity would be O(2n).
+- We need to store a n objects of BSTNode class, where n is the number of nodes. Space complexity would be O(n).
 
 Question 5:
 Find the element in a singly linked list that's m elements from the end. For example, if a linked list has 5 elements, the 3rd element from the end is the 3rd element. The function definition should look like question5(ll, m), where ll is the first node of a linked list and m is the "mth number from the end". You should copy/paste the Node class below to use as a representation of a node in the linked list. Return the value of the node at that position.
