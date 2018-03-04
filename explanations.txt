@@ -6,6 +6,7 @@ Given two strings s and t, determine whether some anagram of t is a substring of
 Clear the question:
 - Will 's' be longer than 't'?
 - Should we consider case sensitivity?
+- Should we consider spaces?
 
 Confirm the input and output:
 - Input: 2 strings. First is 's' and second is 't'.
