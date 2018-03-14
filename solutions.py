@@ -44,22 +44,7 @@ class question1TestCase(unittest.TestCase):
 
     def test_string2_not_string(self):
         self.assertEqual(question1("udacity", 1), "Error: Argument(s) not string")
-        
 
-def run_test_q1():
-    print "\nQuestion1 Test Cases:"
-    # Should return True
-    print " question1(\"udacity\", \"ad\"): %s" % (question1("udacity", "ad"))
-    # Should return Flase
-    print " question1(\"udacity\", \"udy\"): %s" % (question1("udacity", "udy"))
-    # Should return True
-    print " question1(\"udacity\", \"\"): %s" % (question1("udacity", ""))
-    # Should return False
-    print " question1(\"\", \"ad\"): %s" % (question1("", "ad"))
-    # Should return False
-    print " question1(\"ad\", \"udacity\"): %s" % (question1("ad", "udacity"))
-    # Should return Error
-    print " question1(\"udacity\", 1): %s" % (question1("udacity", 1))
 
 def question2(a):
     # Check whether arguement is of string data-type
@@ -379,11 +364,11 @@ def run_test_q5():
     # Should return Error
     print " question5(ll, 3.5): %s" % (question5(ll, 3.5))
 
-run_test_q1()
 run_test_q2()
 run_test_q3()
 run_test_q4()
 run_test_q5()
+
 
 if __name__ == '__main__':
     unittest.main()
