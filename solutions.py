@@ -1,3 +1,5 @@
+import unittest
+
 def question1(s,t):
     # Check whether arguements are of string data-type
     if type(s) != str or type(t) != str:
@@ -21,6 +23,28 @@ def question1(s,t):
             return True
 
     return False
+
+class question1TestCase(unittest.TestCase):
+    """Test cases for question1."""
+
+    def test_result_to_pass(self):
+        self.assertEqual(question1("udacity", "ad"), True)
+
+    def test_result_to_fail(self):
+        self.assertEqual(question1("udacity", "udy"), False)
+
+    def test_string2_empty(self):
+        self.assertEqual(question1("udacity", ""), True)
+
+    def test_string1_empty(self):
+        self.assertEqual(question1("", "ad"), False)
+
+    def test_string2_larger(self):
+        self.assertEqual(question1("ad", "udacity"), False)
+
+    def test_string2_not_string(self):
+        self.assertEqual(question1("udacity", 1), "Error: Argument(s) not string")
+        
 
 def run_test_q1():
     print "\nQuestion1 Test Cases:"
@@ -360,3 +384,6 @@ run_test_q2()
 run_test_q3()
 run_test_q4()
 run_test_q5()
+
+if __name__ == '__main__':
+    unittest.main()
