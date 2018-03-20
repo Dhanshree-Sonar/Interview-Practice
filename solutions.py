@@ -194,7 +194,7 @@ class question3TestCase(unittest.TestCase):
         self.assertEqual(question3(G), G_MST)
 
     def test_result_to_fail(self):
-        self.assertEqual(question3("graph"), 'Error: G is not a dictionary')
+        self.assertEqual(question3('graph'), 'Error: G is not a dictionary')
 
     def test_no_edges_graph(self):
         self.assertEqual(question3(H), 'Error: G has no edge to form a tree')
