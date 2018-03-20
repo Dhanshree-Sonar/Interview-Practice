@@ -165,6 +165,28 @@ def question3(G):
 
     return mst_graph
 
+G = {'A': [('B', 15), ('C', 25)],
+         'B': [('A', 15), ('E', 10), ('H', 5), ('I', 25)],
+         'C': [('A', 25), ('D', 10), ('E', 20)],
+         'D': [('C', 10)],
+         'E': [('B', 10), ('C', 20), ('F', 10), ('G', 5)],
+         'F': [('E', 10)],
+         'G': [('E', 5)],
+         'H': [('B', 5), ('I', 15)],
+         'I': [('B', 25), ('H', 15)]}
+
+G_MST = {'A': [('B', 15)],
+             'B': [('H', 5), ('E', 10), ('A', 15)],
+             'C': [('D', 10), ('E', 20)],
+             'D': [('C', 10)],
+             'E': [('G', 5), ('B', 10), ('F', 10), ('C', 20)],
+             'F': [('E', 10)],
+             'G': [('E', 5)],
+             'H': [('B', 5), ('I', 15)],
+             'I': [('H', 15)]}
+
+H = {'A':[]}
+
 def run_test_q3():
     G = {'A': [('B', 15), ('C', 25)],
          'B': [('A', 15), ('E', 10), ('H', 5), ('I', 25)],
@@ -197,6 +219,22 @@ def run_test_q3():
     print " question3(H): %s" % (question3(H))
     # Should return {}
     print " question3({}): %s" % (question3({}))
+
+class question3TestCase(unittest.TestCase):
+    """Test cases for question3."""
+
+    def test_result_to_pass(self):
+        self.assertEqual(question3(G), G_MST)
+
+    def test_result_to_fail(self):
+        self.assertEqual(question3("graph"), 'Error: G is not a dictionary')
+
+    def test_no_edges_graph(self):
+        self.assertEqual(question3(H), 'Error: G has no edge to form a tree')
+
+    def test_empty_graph(self):
+        self.assertEqual(question3({}), {})
+
 
 def question4(T, r, n1, n2):
     # Check if T is not a set
