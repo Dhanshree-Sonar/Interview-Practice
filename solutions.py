@@ -66,6 +66,25 @@ def question2(a):
 
     return longest
 
+class question2TestCase(unittest.TestCase):
+    """Test cases for question1."""
+
+    def test_result_to_pass(self):
+        self.assertEqual(question2("Able was I ere I saw Elba"), 'able was i ere i saw elba')
+
+    def test_result_to_fail(self):
+        self.assertEqual(question2(121), 'Error: Argument is not a string')
+
+    def test_string_single_char(self):
+        self.assertEqual(question2("p"), 'p')
+
+    def test_string_empty(self):
+        self.assertEqual(question2(""), '')
+
+    def test_string_case_insensitive(self):
+        self.assertEqual(question2("asRacecarde"), 'racecar')
+
+
 def run_test_q2():
     print "\nQuestion2 Test Cases:"
     # Should return racecar
