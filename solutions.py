@@ -85,21 +85,6 @@ class question2TestCase(unittest.TestCase):
         self.assertEqual(question2("asRacecarde"), 'racecar')
 
 
-def run_test_q2():
-    print "\nQuestion2 Test Cases:"
-    # Should return racecar
-    print " question2(\"asRacecarde\"): %s" % (question2("asRacecarde"))
-    # Should return dddd
-    print " question2(\"asaddddghj\"): %s" % (question2("asaddddghj"))
-    # Should return able was i ere i saw elba
-    print " question2(\"Able was I ere I saw Elba\"): %s" % (question2("Able was I ere I saw Elba"))
-    # Should return p
-    print " question2(\"p\"): %s" % (question2("p"))
-    # Should return ''
-    print " question2(\"\"): %s" % (question2(""))
-    # Should return Error
-    print " question2(121): %s" % (question2(121))
-
 def question3(G):
 
     # Use Kruskal's algorithm(Greedy algorithm) to find the minimum spanning tree
@@ -383,7 +368,6 @@ def run_test_q5():
     # Should return Error
     print " question5(ll, 3.5): %s" % (question5(ll, 3.5))
 
-run_test_q2()
 run_test_q3()
 run_test_q4()
 run_test_q5()
