@@ -67,7 +67,7 @@ def question2(a):
     return longest
 
 class question2TestCase(unittest.TestCase):
-    """Test cases for question1."""
+    """Test cases for question2."""
 
     def test_result_to_pass(self):
         self.assertEqual(question2("Able was I ere I saw Elba"), 'able was i ere i saw elba')
