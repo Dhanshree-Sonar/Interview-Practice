@@ -72,6 +72,7 @@ def minion_game(s):
         print '\nDraw'
 
 minion_game('BANANA')
+minion_game('ABCDEF')
 
 
 
@@ -96,6 +97,20 @@ def minion_game_efficient(s):
 
 
 minion_game_efficient('BANANA')
+
+##Complexity:
+##    Solution 1:
+##        Space = O(N^2 + 2) as we are storing each substring as well as counts for
+##            bot the users. It can be approximated to O(n^2)
+##        Time = O(N^2 + 2N) as we are traversing string staring at each character
+##            and 2N is for printing result for both users.
+##
+##    Solution 2:
+##        Space = O(2), we are just storing counts for both user. It can be
+##            approximated to O(1)
+##        Time = O(N) because we are looping through string just for one time
+
+            
 
 
 
