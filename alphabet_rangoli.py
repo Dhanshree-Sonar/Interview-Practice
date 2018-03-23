@@ -49,3 +49,13 @@ def print_rangoli(n):
 print_rangoli(10)
 print_rangoli(27)
 print_rangoli('a')
+
+##Complexity:
+##    Space = O(n(4n - 3) + (2n-1)), (4n-3) is the width of the rangoli and
+##        n is the number of the rows need to store. (2n -1) is the string length
+##        of 's'.
+##        It can be approximated to O(4N^2)
+##
+##    Time = O(3N)
+##
+
