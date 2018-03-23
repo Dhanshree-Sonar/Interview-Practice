@@ -14,4 +14,7 @@ rooms = [1, 2, 3, 6, 5, 4, 4, 2, 5, 3, 6, 1, 6, 5, 3, 2, 4, 1, 2, 5, 1, 4,
 
 find_captain_room(k, rooms)
 
+##Complexity:
+##    Space = O(1) are do not need anyother data structure.
+##    Time = O(1) , juts one line mathematical formula to find captians room
 
