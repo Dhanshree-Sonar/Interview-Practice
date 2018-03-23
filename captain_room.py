@@ -1,3 +1,7 @@
+##Reference:
+##https://www.hackerrank.com/challenges/py-the-captains-room/problem
+##Read the problem on hackerrank page
+
 def find_captain_room(k, rooms):
 ##    room_nums = set(rooms)
 ##    for room in room_nums:
