@@ -269,28 +269,6 @@ def lca(root, n1, n2):
 
     return root.value
 
-def run_test_q4():
-    T = [[0, 1, 0, 0, 0],
-         [0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0],
-         [1, 0, 0, 0, 1],
-         [0, 0, 0, 0, 0]]
-
-    print "\nQuestion4 Test Cases:"
-    # Should return 3
-    print " question4(T,3,1,4): %s" % (question4(T,3,1,4))
-    # Should return 0
-    print " question4(T,3,0,1): %s" % (question4(T,3,0,1))
-    # Should return error
-    print " question4(1,3,1,4): %s" % (question4(1,3,1,4))
-    # Should return error
-    print " question4([],3,1,4): %s" % (question4([],3,1,4))
-    # Should return error
-    print " question4(T,3,-1,4): %s" % (question4(T,3,-1,4))
-    # Should return error
-    print " question4(T,3,1,4.2): %s" % (question4(T,3,1,4.2))
-    # Should return error
-    print " question4(T,3,1,5): %s" % (question4(T,3,1,5))
 
 T = [[0, 1, 0, 0, 0],
      [0, 0, 0, 0, 0],
@@ -401,7 +379,6 @@ def run_test_q5():
     # Should return Error
     print " question5(ll, 3.5): %s" % (question5(ll, 3.5))
 
-run_test_q4()
 run_test_q5()
 
 
