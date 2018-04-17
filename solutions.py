@@ -356,29 +356,6 @@ class LinkedList(object):
         return None
 
 
-def run_test_q5():
-    ll = LinkedList(20)
-    ll.append(12)
-    ll.append(45)
-    ll.append(37)
-    ll.append(24)
-    ll.append("cat")
-    ll.append(11)
-
-    print "\nQuestion5 Test Cases:"
-    # Should return 12
-    print " question5(ll, 2): %s" % (question5(ll, 2))
-    # Should return 37
-    print " question5(ll, 4): %s" % (question5(ll, 4))
-    # Should return cat
-    print " question5(ll, 6): %s" % (question5(ll, 6))
-    # Should return None
-    print " question5(ll, 0): %s" % (question5(ll, 0))
-    # Should return None
-    print " question5(ll, 8): %s" % (question5(ll, 8))
-    # Should return Error
-    print " question5(ll, 3.5): %s" % (question5(ll, 3.5))
-
 ll = LinkedList(20)
 ll.append(12)
 ll.append(45)
@@ -401,9 +378,6 @@ class question5TestCase(unittest.TestCase):
 
     def test_position_noninteger(self):
         self.assertEqual(question5(ll, 3.5), 'Error: \'m\' is not an integer')
-
-
-run_test_q5()
 
 
 if __name__ == '__main__':
