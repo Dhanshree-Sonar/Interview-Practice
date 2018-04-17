@@ -438,6 +438,10 @@ class question5TestCase(unittest.TestCase):
     def test_position_noninteger(self):
         self.assertEqual(question5(ll, 3.5), 'Error: \'m\' is not an integer')
 
+    def test_node_value_string(self):
+        self.assertEqual(question5(ll, 6), 'cat')
+
+
 
 if __name__ == '__main__':
     unittest.main()
