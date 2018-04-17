@@ -292,6 +292,34 @@ def run_test_q4():
     # Should return error
     print " question4(T,3,1,5): %s" % (question4(T,3,1,5))
 
+T = [[0, 1, 0, 0, 0],
+     [0, 0, 0, 0, 0],
+     [0, 0, 0, 0, 0],
+     [1, 0, 0, 0, 1],
+     [0, 0, 0, 0, 0]]
+
+class question4TestCase(unittest.TestCase):
+    """Test cases for question4."""
+
+    def test_result_to_pass(self):
+        self.assertEqual(question4(T,3,1,4), 3)
+
+    def test_result_to_fail(self):
+        self.assertEqual(question4(1,3,1,4), 'Error: T is not a set')
+
+    def test_tree_empty(self):
+        self.assertEqual(question4([],3,1,4), 'Error: T is empty')
+
+    def test_node_less_than_zero(self):
+        self.assertEqual(question4(T,3,-1,4), 'Error: Node(s) can not be less than 0')
+
+    def test_node_noninteger(self):
+        self.assertEqual(question4(T,3,1,4.2), 'Error: Node(s) can not be non-integer')
+
+    def test_node_greater_than_root(self):
+        self.assertEqual(question4(T,3,1,5), 'Error: Nodes can not be greater than largest tree element')
+
+
 def question5(ll, m):
     # Check if m is an integer
     if type(m) != int:
