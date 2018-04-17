@@ -379,6 +379,30 @@ def run_test_q5():
     # Should return Error
     print " question5(ll, 3.5): %s" % (question5(ll, 3.5))
 
+ll = LinkedList(20)
+ll.append(12)
+ll.append(45)
+ll.append(37)
+ll.append(24)
+ll.append("cat")
+ll.append(11)
+    
+class question5TestCase(unittest.TestCase):
+    """Test cases for question5."""
+
+    def test_result_to_pass(self):
+        self.assertEqual(question5(ll, 2), 12)
+
+    def test_result_to_fail(self):
+        self.assertEqual(question5(ll, 0), None)
+
+    def test_position_greater_than_ll_length(self):
+        self.assertEqual(question5(ll, 8), None)
+
+    def test_position_noninteger(self):
+        self.assertEqual(question5(ll, 3.5), 'Error: \'m\' is not an integer')
+
+
 run_test_q5()
 
 
